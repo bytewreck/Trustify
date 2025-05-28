@@ -293,7 +293,7 @@ namespace Trustify
             }
             else
             {
-                Console.WriteLine($"{"Open",-10}: {OpenPolicyHandle("localhost", out IntPtr policy_handle)}");
+                Console.WriteLine($"{"Open",-10}: {OpenPolicyHandle(args[1], out IntPtr policy_handle)}");
 
                 if (args[0].StartsWith("c", StringComparison.InvariantCultureIgnoreCase))
                 {
