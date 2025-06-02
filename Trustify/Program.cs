@@ -137,8 +137,8 @@ namespace Trustify
         static extern int LsaDeleteTrustedDomain(IntPtr ObjectHandle, IntPtr TrustedDomainSid);
 
         [DllImport("advapi32.dll", SetLastError = true)]
-        static extern int LsaSetForestTrustInformation2(IntPtr PolicyHandle, UNICODE_STRING TrustedDomainName, int HighestRecordType,
-            LSA_FOREST_TRUST_INFORMATION2 ForestTrustInfo, [MarshalAs(UnmanagedType.Bool)] bool CheckOnly, out IntPtr CollisionInfo);
+        static extern int LsaSetForestTrustInformation(IntPtr PolicyHandle, UNICODE_STRING TrustedDomainName, LSA_FOREST_TRUST_INFORMATION2 ForestTrustInfo, 
+            [MarshalAs(UnmanagedType.Bool)] bool CheckOnly, out IntPtr CollisionInfo);
 
         [DllImport("advapi32.dll", SetLastError = true)]
         static extern bool ConvertStringSidToSid(string StringSid, out IntPtr Sid);
@@ -266,7 +266,7 @@ namespace Trustify
 
                 try
                 {
-                    return LsaSetForestTrustInformation2(policy_handle, trusted_domain_name, 2 /* ForestTrustDomainInfo */, forest_trust_info, false, out IntPtr collision_info);
+                    return LsaSetForestTrustInformation(policy_handle, trusted_domain_name, forest_trust_info, false, out IntPtr collision_info);
                 }
                 finally
                 {
@@ -293,19 +293,19 @@ namespace Trustify
             }
             else
             {
-                Console.WriteLine($"{"Open",-10}: {OpenPolicyHandle(args[1], out IntPtr policy_handle)}");
+                Console.WriteLine($"{"Open",-10}: {OpenPolicyHandle(args[1], out IntPtr policy_handle):x}");
 
                 if (args[0].StartsWith("c", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    Console.WriteLine($"{"Create",-10}: {CreateDomainTrust(policy_handle, args[3], args[4], args[2], args[5])}");
-                    Console.WriteLine($"{"Set",-10}: {SetDomainTrust(policy_handle, args[3])}");
+                    Console.WriteLine($"{"Create",-10}: {CreateDomainTrust(policy_handle, args[3], args[4], args[2], args[5]):x}");
+                    Console.WriteLine($"{"Set",-10}: {SetDomainTrust(policy_handle, args[3]):x}");
                 }
                 else if (args[0].StartsWith("d", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    Console.WriteLine($"{"Delete",-10}: {DeleteDomainTrust(policy_handle, args[2])}");
+                    Console.WriteLine($"{"Delete",-10}: {DeleteDomainTrust(policy_handle, args[2]):x}");
                 }
 
-                Console.WriteLine($"{"Close",-10}: {ClosePolicyHandle(policy_handle)}");
+                Console.WriteLine($"{"Close",-10}: {ClosePolicyHandle(policy_handle):x}");
             }
         }
     }
