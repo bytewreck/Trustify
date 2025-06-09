@@ -5,8 +5,6 @@
 
 Trustify is a command-line tool for creating (and deleting) inbound Active Directory forest trusts with TGT delegation enabled using native Windows LSA APIs.
 
----
-
 ## Usage
 
 ```bash
@@ -53,8 +51,6 @@ Trustify.exe delete target.local S-1-5-21-1556913138-1403956553-584833181
 - Windows OS
 - Run as a user with sufficient privileges (Membership in Enterprise Admins, Domain Admins in root domain, or Incoming Forest Trust Builders)
 - .NET Framework or .NET-compatible runtime for building/running
-
----
 
 ## Build Instructions
 
