@@ -10,13 +10,13 @@ Trustify is a command-line tool for creating (and deleting) inbound Active Direc
 ## Usage
 
 ```bash
-Trustify [create|delete] ...
+Trustify.exe [create|delete] ...
 ```
 
 ### Create Trust
 
 ```bash
-Trustify create [target] [sid] [dns] [netbios] [password]
+Trustify.exe create [target] [sid] [dns] [netbios] [password]
 ```
 
 - `target`: The remote domain where the trust is created (e.g. `domain.com`)
@@ -28,7 +28,7 @@ Trustify create [target] [sid] [dns] [netbios] [password]
 ### Delete Trust
 
 ```bash
-Trustify delete [target] [sid]
+Trustify.exe delete [target] [sid]
 ```
 
 - `target`: The remote domain where the trust is deleted
