@@ -32,8 +32,6 @@ Trustify.exe delete [target] [sid]
 - `target`: The remote domain where the trust is deleted
 - `sid`: SID of the trusted domain to delete
 
----
-
 ### Usage Example
 
 Create an inbound forest trust in target.local from the domain attacker.local:
