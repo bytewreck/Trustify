@@ -63,3 +63,6 @@ Or compile with `dotnet` CLI:
 ```bash
 dotnet build Trustify.csproj
 ```
+
+## References
+- [Untrustworthy Trust Builders: Account Operators Replicating Trust Attack (AORTA)](https://specterops.io/blog/2025/06/25/untrustworthy-trust-builders-account-operators-replicating-trust-attack-aorta/)
