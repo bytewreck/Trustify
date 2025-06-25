@@ -3,7 +3,7 @@
 [![Windows 11](https://img.shields.io/badge/Windows-11%20-007bb8.svg?logo=Windows)](#)
 
 
-Trustify is a command-line tool for creating (and deleting) inbound Active Directory forest trusts with TGT delegation enabled using native Windows LSA APIs.
+Trustify is a command-line tool for creating (and deleting) inbound Active Directory forest trusts with TGT delegation enabled using native Windows LSA APIs. 
 
 ## Usage
 
